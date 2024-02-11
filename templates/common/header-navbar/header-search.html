@@ -1,0 +1,15 @@
+{% load static %}
+<header color="light" class="search-container">
+  <div class="search-inner">
+    <div class="search-content">
+      <div class="search-content-backspace">
+        <a href="#" onclick="history.back()">
+          <img src="{% static 'img/arrow-back.svg' %}" alt="Back" />
+        </a>
+      </div>
+      <div class="search-content-searchbar">
+        <input placeholder="분야 / 학교 / 선생님을 검색해보세요" type="text" class="search-input">
+      </div>
+    </div>
+  </div>
+</header>

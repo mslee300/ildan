@@ -1,0 +1,15 @@
+{% load static %}
+<header color="light" class="home-header-container">
+  <div role="button" class="header-logo">
+    <a href="{% url 'ildan:index' %}">
+      <img class="header-logo-img" src="{% static 'img/header-logo.svg' %}" alt="logo">
+    </a>
+  </div>
+  <div class="header-login">
+    <a href="{% url 'common:login' %}">
+      <button class="header-login-btn">
+        로그인/가입
+      </button>
+    </a>
+  </div>
+</header>

@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+{% include "common/header-navbar/header-empty.html" %}
+<!-- my profile page -->
+<div class="profile-container">
+  <section class="profile-section">
+    <h2 class="profile-title">My Page</h2>
+    <div class="profile-info">
+      <img class="profile-img" src="/static/img/my-profile.svg" />
+      <div class="profile-detail">
+        <p class="profile-username">{{ request.user.username }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="account-section">
+    <h3 class="section-title">계정</h3>
+    <ul class="account-links">
+      <li><a href="{% url 'common:logout' %}" class="log-out">로그아웃</a></li>
+      <li><a href="#" target="_blank">문의하기</a></li>
+      <li><a href="#" target="_blank">신고하기</a></li>
+      <li>
+        <!-- Let Users Delete Their Account -->
+        <form method="post" action="{% url 'common:delete' %}" id="deleteForm">
+        {% csrf_token %}
+          <button type="submit" class="delete-btn" onclick="return confirmDeletion();">회원 탈퇴</button>
+        </form>
+      </li>
+    </ul>
+  </section>
+
+  <section class="guidance-section">
+    <h3 class="section-title">이용 안내</h3>
+    <ul class="guidance-links">
+      <li><a href="#" target="_blank">서비스 이용약관</a></li>
+      <li><a href="#" target="_blank">개인정보 처리방침</a></li>
+      <li><a href="#" target="_blank">튜터서비스 이용규칙</a></li>
+    </ul>
+  </section>
+</div>
+{% include "common/footer-navbar/footer-mypage.html" %}
+<script>
+  const log_out = document.getElementsByClassName("log-out");
+  Array.from(log_out).forEach(function (element) {
+    element.addEventListener("click", function () {
+      if (confirm("로그아웃 하시겠습니까?")) {
+        location.href = this.dataset.uri;
+      }
+    });
+  });
+
+  function confirmDeletion() {
+    return confirm("정말 탈퇴하시겠습니까?");
+  }
+</script>
+{% endblock %}

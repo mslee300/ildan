@@ -1,0 +1,89 @@
+{% load static %}
+{% load pwa %}
+<!doctype html>
+<html lang="ko">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    {% progressive_web_app_meta %}
+    <!-- Ildan CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nprogress.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <!-- For SEO -->
+    <title>일단코딩 - 만들면서 배우는 일대일 화상코딩</title>
+    <meta name="Description" content=""/>
+    <meta name="KeyWords" content=""/>
+    <!-- Ildan Falvicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'falvicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'falvicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'falvicon/favicon-16x16.png' %}">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <!-- Background Screen -->
+  <div class="big-screen">
+  <div class="inner-screen">
+{% block content %}
+{% endblock %}
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/nprogress.js' %}"></script>
+    <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+      $(document).ready(function() {
+        // Pull-to-Refresh Variables
+        let touchStartY = 0;
+        let touchEndY = 0;
+        const threshold = 150; // Threshold for pull to refresh
+        let isPulling = false; // Flag to indicate if pulling action is happening
+
+        // Function to refresh page
+        function refreshPage() {
+          NProgress.start(); // Start NProgress instead of showing a spinner
+          setTimeout(function () {
+            window.location.reload();
+          }, 500); // Give NProgress some time to show before reloading
+        }
+
+        // Event listeners for touch events
+        $(document).on("touchstart", function(e) {
+          if (!isNProgressRunning) { // Only allow pull-to-refresh if NProgress isn't already running
+            touchStartY = e.touches[0].pageY;
+            isPulling = false; // Reset pulling action
+          }
+        });
+
+        $(document).on("touchmove", function(e) {
+          if (!isNProgressRunning) {
+            touchEndY = e.touches[0].pageY;
+            if (touchEndY > touchStartY + threshold) {
+              isPulling = true; // User has pulled down
+              NProgress.start(); // Start NProgress as user pulls down
+            }
+          }
+        });
+
+        $(document).on("touchend", function(e) {
+          if (isPulling && !isNProgressRunning) {
+            refreshPage(); // Refresh the page if the user has pulled down beyond the threshold
+          } else {
+            NProgress.done(); // End NProgress if the user didn't pull far enough
+          }
+        });
+
+        // Optional: Close alerts after 5 seconds
+        setTimeout(function() {
+          $(".alert-dismissible").alert('close');
+        }, 5000);
+      });
+    </script>
+  </div>
+  </div>
+</body>
+</html>

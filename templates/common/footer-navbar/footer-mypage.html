@@ -1,0 +1,25 @@
+{% load static %}
+<div class="footer-navbar">
+  <nav class="footer-content">
+    <ul class="footer-list">
+      <li class="footer-item">
+        <a href="{% url 'ildan:index' %}" class="footer-link">
+            <img class="footer-image" src="{% static 'img/home.svg' %}">
+          홈
+        </a>
+      </li>
+      <li class="footer-item">
+        <a href="{% url 'ildan:find_tutor' %}" class="footer-link">
+          <img class="footer-image" src="{% static 'img/find.svg' %}">
+          튜터찾기
+        </a>
+      </li>
+      <li class="footer-item">
+        <a href="{% url 'common:mypage' %}" class="footer-link" style="color:#8567FE;">
+          <img class="footer-image" src="{% static 'img/profile-filled.svg' %}">
+          마이페이지
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

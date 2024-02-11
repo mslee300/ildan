@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% include "common/header-navbar/header-search.html" %}
+  <div class="search-content-container">
+    <div class="search-content-wrapper">
+      <h2 class="search-content-title">추천 검색어</h2>
+      <section class="top-search">
+        <button class="top-search-btn">파이썬</button>
+        <button class="top-search-btn">ChatGPT</button>
+        <button class="top-search-btn">앱 개발</button>
+        <button class="top-search-btn">유니티</button>
+        <button class="top-search-btn">게임 개발</button>
+        <button class="top-search-btn">AI</button>
+        <button class="top-search-btn">메타버스</button>
+      </section>
+      <h2 class="search-content-title2">인기 선생님</h2>
+      <div class="top-teachers">
+        <div style="position: relative; display: inline-flex; margin-bottom:24px;">
+          <img class="top-teacher" src="/static/img/teacher1.png" alt="선생님">
+          <div class="top-teacher-desc">
+            <p class="top-teacher-name">Benjamin 선생님</p>
+            <p class="top-teacher-skill">풀스택 웹개발</p>
+          </div>
+        </div>
+
+        <div style="position: relative; display: inline-flex; margin-bottom:24px;">
+          <img class="top-teacher" src="/static/img/teacher2.jpg" alt="선생님">
+          <div class="top-teacher-desc">
+            <p class="top-teacher-name">Junseo 선생님</p>
+            <p class="top-teacher-skill">인공지능 개발</p>
+          </div>
+        </div>
+
+        <a href="{% url 'ildan:tutor_detail' %}">
+          <div style="position: relative; display: inline-flex; margin-bottom:24px;">
+            <img class="top-teacher" src="/static/img/teacher3.jpg" alt="선생님">
+            <div class="top-teacher-desc">
+              <p class="top-teacher-name">Eugene 선생님</p>
+              <p class="top-teacher-skill">프론트엔드 웹개발</p>
+            </div>
+          </div>
+        </a>
+
+        <div style="position: relative; display: inline-flex; margin-bottom:24px;">
+          <img class="top-teacher" src="/static/img/teacher4.jpg" alt="선생님">
+          <div class="top-teacher-desc">
+            <p class="top-teacher-name">Young Chan 선생님</p>
+            <p class="top-teacher-skill">머신러닝 개발</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% load static %}
+<header color="light" class="home-header-container">
+  <div role="button" class="backspace-btn">
+    <a class="back-btn" href="#" onclick="history.back()">
+      <img src="{% static 'img/arrow-back.svg' %}" alt="Back" />
+    </a>
+    <a href="{% url 'ildan:index' %}">
+      <img class="header-logo-img" src="{% static 'img/header-logo.svg' %}" alt="logo">
+    </a>
+  </div>
+</header>

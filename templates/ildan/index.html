@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% include "common/header-navbar/header-home.html" %}
+  <section class="hero-banner">
+    <img src="/static/img/hero-banner.svg" class="hero-banner-img">
+  </section>
+  <div class="sub-banner">
+    <img src="/static/img/sub-banner.svg" class="sub-banner-img">
+    <div class="sub-banner-desc">
+      <p class="sub-banner-desc-1">똑똑한 튜터와의 맞춤 수업</p>
+      <p class="sub-banner-desc-2">검증된 명문대 전공자 튜터</p>
+    </div>
+    <a href="{% url 'ildan:find_tutor' %}">
+      <button type="button" class="sub-banner-btn">찾아보기</button>
+    </a>
+  </div>
+  <div class="banner-bottom-space"></div>
+  <section class="menu-nav-container">
+    <nav class="menu-nav">
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/web.svg" class="menu-nav-img">
+        <span class="menu-item-desc">웹 개발</span>
+      </a>
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/ios.svg" class="menu-nav-img">
+        <span class="menu-item-desc">iOS</span>
+      </a>
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/android.svg" class="menu-nav-img">
+        <span class="menu-item-desc">안드로이드</span>
+      </a>
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/game.svg" class="menu-nav-img">
+        <span class="menu-item-desc">게임 개발</span>
+      </a>
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/ai.svg" class="menu-nav-img">
+        <span class="menu-item-desc">인공지능</span>
+      </a>
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/data.svg" class="menu-nav-img">
+        <span class="menu-item-desc">데이터분석</span>
+      </a>
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/wordpress.svg" class="menu-nav-img">
+        <span class="menu-item-desc">워드프레스</span>
+      </a>
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/publish.svg" class="menu-nav-img">
+        <span class="menu-item-desc">퍼블리싱</span>
+      </a>
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/scratch.svg" class="menu-nav-img">
+        <span class="menu-item-desc">스크래치</span>
+      </a>
+      <a class="menu-nav-link" href="">
+        <img src="/static/img/security.svg" class="menu-nav-img">
+        <span class="menu-item-desc">보안</span>
+      </a>
+    </nav>
+  </section>
+  <div class="banner-bottom-space"></div>
+  <section class="popular-container">
+      <h2 class="main-section-title">일단코딩 인기 서비스</h2>
+      <div class="slider-container slider" id="slider-container">
+          <div class="slider-track">
+              <div class="slider-item">
+                  <img src="/static/img/gpt-service.svg" alt="Description">
+                  <p>ChatGPT API 서비스</p>
+              </div>
+              <div class="slider-item">
+                  <img src="/static/img/unity-service.svg" alt="Description">
+                  <p>유니티 게임 개발</p>
+              </div>
+              <div class="slider-item">
+                  <img src="/static/img/django-service.svg" alt="Description">
+                  <p>장고 게시판 서비스</p>
+              </div>
+              <div class="slider-item">
+                  <img src="/static/img/landing-service.svg" alt="Description">
+                  <p>상업용 랜딩페이지 개발</p>
+              </div>
+              <div class="slider-item">
+                  <img src="/static/img/langchain-service.svg" alt="Description">
+                  <p>랭체인 AI 웹서비스</p>
+              </div>
+          </div>
+      </div>
+  </section>
+  <div class="banner-bottom-space"></div>
+<section class="top-teachers-container">
+    <h2 class="main-section-title2">믿고 찾는 명문대 전공자 튜터</h2>
+    <p class="section-subtitle">CS의 Top-tier 선생님을 만나보세요</p>
+    <div class="teachers-slider slider" id="teachers-slider">
+        <!-- Repeat this div for each teacher, replacing the src with your images and text content -->
+        <a href="{% url 'ildan:tutor_detail' %}" class="">
+          <div class="teacher-card">
+              <img src="/static/img/teacher1.png" alt="선생님 이름" class="teacher-image">
+              <p class="teacher-name">Benjamin<span class="highlight">풀스택 웹개발</span></p>
+              <p class="teacher-description">Boston University</p>
+              <p class="teacher-stats">Computer Science</p>
+              <p class="teacher-price">30,000원</p>
+          </div>
+        </a>
+
+        <a href="{% url 'ildan:tutor_detail2' %}" class="">
+          <div class="teacher-card">
+              <img src="/static/img/teacher2.jpg" alt="선생님 이름" class="teacher-image">
+              <p class="teacher-name">Junseo<span class="highlight">인공지능 개발</span></p>
+              <p class="teacher-description">Boston University</p>
+              <p class="teacher-stats">Computer Engineering</p>
+              <p class="teacher-price">35,000원</p>
+          </div>
+        </a>
+
+        <div class="teacher-card">
+            <img src="/static/img/teacher3.jpg" alt="선생님 이름" class="teacher-image">
+            <p class="teacher-name">Eugene<span class="highlight">프론트엔드 개발</span></p>
+            <p class="teacher-description">Boston University</p>
+            <p class="teacher-stats">Computer Science</p>
+            <p class="teacher-price">25,000원</p>
+        </div>
+
+        <div class="teacher-card">
+            <img src="/static/img/teacher4.jpg" alt="선생님 이름" class="teacher-image">
+            <p class="teacher-name">Young Chan<span class="highlight">머신러닝 개발</span></p>
+            <p class="teacher-description">Boston University</p>
+            <p class="teacher-stats">Computer Engineering</p>
+            <p class="teacher-price">30,000원</p>
+        </div>
+      
+    </div>
+</section>
+  {% include "common/footer-navbar/footer-home.html" %}
+<script>
+  // Ensure the script below is added at the bottom of your HTML or in an external JS file
+
+  document.addEventListener('DOMContentLoaded', (event) => {
+    const sliders = document.querySelectorAll('.slider');
+
+    sliders.forEach(slider => {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.classList.add('active');
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.classList.remove('active');
+      });
+
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1; // Adjust the sensitivity as needed
+        slider.scrollLeft = scrollLeft - walk;
+      });
+    });
+  });
+
+</script>
+{% endblock %}
