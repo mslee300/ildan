@@ -6,7 +6,7 @@
 </p>
 
 <p align="center"> 
-Get 1:1 coding lesson from top university students. 
+Get 1:1 coding lessons from top university students. 
 </p>
 
 ## Introduction
