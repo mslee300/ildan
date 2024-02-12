@@ -6,12 +6,12 @@
 </p>
 
 <p align="center"> 
-Get motivational messages from AI. 
+Get 1:1 coding lesson from top university students. 
 </p>
 
 ## Introduction
 
-It's frustrating trying to meet your goal sometimes isn't it? Grandma AI can help you in those situations by providing excellent motivational messages just for you!
+Learning how to code is not easy! Our platform helps students learn coding quickly by connecting them with tutors from top universities.
 
 <div align="center">
   <video src="https://github.com/mslee300/grandma-ai/assets/55467050/2146155d-6451-4daa-969d-f109f95756cc" />
@@ -19,12 +19,12 @@ It's frustrating trying to meet your goal sometimes isn't it? Grandma AI can hel
 
 ## Features
 
-A few of the things you can do with Grandma AI:
+A few of the things you can do with Ildan:
 
-* Get AI generated messages via e-mail or text 
-* Create & edit goals 
-* Choose message intensity 
-* Login & Signup with Gmail
+* See tutors based on curriculum
+* Read tutor details and book a class with them
+* Search a tutor based on interest
+* Login & Signup
 
 <p align="center">
   <img src = "https://github.com/mslee300/ildan/assets/55467050/49884909-c785-44bd-9a65-dea7e0a3e8a2" width=700> 
@@ -36,4 +36,4 @@ A few of the things you can do with Grandma AI:
 
 ## Feedback
 
-Feel free to send us feedback on [Ildan](mailto:minseok30086@gmail.com) or [file an issue](https://github.com/mslee300/grandma-ai/issues). Feature requests are always welcome. If you wish to contribute, please help yourself!
+Feel free to send us feedback on [Ildan](mailto:minseok30086@gmail.com) or [file an issue](https://github.com/mslee300/ildan/issues). Feature requests are always welcome. If you wish to contribute, please help yourself!
