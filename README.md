@@ -6,12 +6,12 @@
 </p>
 
 <p align="center"> 
-Get 1:1 coding lessons from top university students. 
+Get 1:1 coding lessons from top university students! 
 </p>
 
 ## Introduction
 
-Learning how to code is not easy! Our platform helps students learn coding quickly by connecting them with tutors from top universities.
+Learning how to code is not easy! Our platform helps students learn coding quickly by connecting them with tutors from top universities with a project-based coding curriculum.
 
 <div align="center">
   <video src="https://github.com/mslee300/grandma-ai/assets/55467050/2146155d-6451-4daa-969d-f109f95756cc" />
