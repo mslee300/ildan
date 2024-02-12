@@ -23,7 +23,7 @@ A few of the things you can do with Ildan:
 
 * See tutors based on curriculum
 * Read tutor details and book a class with them
-* Search a tutor based on interest
+* Search for a tutor based on interest
 * Login & Signup
 
 <p align="center">
